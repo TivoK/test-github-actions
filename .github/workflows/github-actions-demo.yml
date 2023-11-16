@@ -15,5 +15,9 @@ jobs:
       - name: List files in the repository
         run: |
           ls ${{ github.workspace }}
-      - uses: ./.github/actions/app-dependencies
+      - name: Install deps
+        uses: ./.github/actions/app-dependencies
+      - name: Which python?
+        run: |
+          python3 --version
       - run: echo "🍏 This job's status is ${{ job.status }}."
