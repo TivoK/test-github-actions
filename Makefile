@@ -50,9 +50,14 @@ dev-requirements.txt: requirements.txt dev-requirements.in
 	pip-compile dev-requirements.in
 
 pip-update: pip-tools.txt requirements.txt dev-requirements.txt
-	(source ${PYENV_ROOT}/versions/${VIRTUALENV_NAME}/bin/activate && python3 --version \
-	 && pip install --upgrade pip \
-	 && pip-sync pip-tools.txt requirements.txt dev-requirements.txt)
+	(if [ -n "$$PYENV_ROOT" ]; then \
+		source ${PYENV_ROOT}/versions/${VIRTUALENV_NAME}/bin/activate && python3 --version \
+		&& pip install --upgrade pip \
+		&& pip-sync pip-tools.txt requirements.txt dev-requirements.txt \
+	else
+		pip install --upgrade pip \
+		&& pip-sync pip-tools.txt requirements.txt dev-requirements.txt \
+	fi)
 	
 
 virtualenv: ${PYENV_ROOT}/versions/${VIRTUALENV_NAME} pip-update
