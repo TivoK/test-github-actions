@@ -1,7 +1,7 @@
 .ONESHELL:
 SHELL=/bin/bash
 
-PYTHON_VERSION := 3.10.0
+PYTHON_VERSION := 3.10.6
 VIRTUALENV_NAME := data-lake
 PYENV_ROOT := $(shell pyenv root)
 BUILD := build
