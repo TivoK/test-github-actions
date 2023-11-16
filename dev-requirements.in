@@ -1,0 +1,16 @@
+-c requirements.txt
+-c pip-tools.txt
+pytest
+flake8==3.8
+jupyter_console
+pdbpp
+moto
+freezegun
+pyyaml
+pandas
+avro
+delta-spark==2.1.1
+pytz
+pycountry==22.3.5
+aws-cdk-aws-lambda-python-alpha==2.101.1a0
+phonenumbers==8.13.23
