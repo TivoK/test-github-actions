@@ -55,7 +55,7 @@ pip-update: pip-tools.txt requirements.txt dev-requirements.txt
 		&& pip install --upgrade pip \
 		&& pip install --upgrade pip-tools \
 		&& pip-sync pip-tools.txt requirements.txt dev-requirements.txt \
-	else
+	else \
 		pip install --upgrade pip \
 		&& pip install --upgrade pip-tools \
 		&& pip-sync pip-tools.txt requirements.txt dev-requirements.txt \
