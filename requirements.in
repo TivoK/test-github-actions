@@ -9,3 +9,5 @@ aws-cdk.aws-lambda-python-alpha
 boto3
 constructs>=10.0.0
 python-snappy==0.6.1
+pyyaml
+pyzmq
