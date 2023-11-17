@@ -35,7 +35,7 @@ ${PYENV_ROOT}/versions/${PYTHON_VERSION}:
 
 ${PYENV_ROOT}/versions/${VIRTUALENV_NAME}: ${PYENV_ROOT}/versions/${PYTHON_VERSION}
 	pyenv virtualenv ${PYTHON_VERSION} ${VIRTUALENV_NAME}
-	source ${PYENV_ROOT}/versions/${VIRTUALENV_NAME}/bin/activate && python3 --version \
+	source ${PYENV_ROOT}/versions/${VIRTUALENV_NAME}/bin/activate \
 	&& pip install --upgrade pip \
 	&& pip install pip-tools -r pip-tools.txt
 
@@ -51,7 +51,7 @@ dev-requirements.txt: requirements.txt dev-requirements.in
 
 pip-update: pip-tools.txt requirements.txt dev-requirements.txt
 	if [ -n "$$PYENV_ROOT" ]; then \
-		source ${PYENV_ROOT}/versions/${VIRTUALENV_NAME}/bin/activate && python3 --version \
+		source ${PYENV_ROOT}/versions/${VIRTUALENV_NAME}/bin/activate \
 		&& pip install --upgrade pip \
 		&& pip-sync pip-tools.txt requirements.txt dev-requirements.txt; \
 	else \
