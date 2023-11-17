@@ -1,0 +1,13 @@
+-c pip-tools.txt
+aws-cdk-lib
+aws-cdk.aws-glue-alpha
+aws-cdk.aws-kinesisanalytics-flink-alpha
+aws-cdk.aws-kinesisfirehose-alpha
+aws-cdk.aws-kinesisfirehose-destinations-alpha
+aws-cdk.aws-lambda-go-alpha
+aws-cdk.aws-lambda-python-alpha
+boto3
+constructs>=10.0.0
+python-snappy==0.6.1
+pyyaml
+pyzmq
