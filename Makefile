@@ -54,13 +54,15 @@ pip-update: pip-tools.txt requirements.txt dev-requirements.txt
 		source ${PYENV_ROOT}/versions/${VIRTUALENV_NAME}/bin/activate && python3 --version \
 		&& pip install --upgrade pip \
 		&& pip install --upgrade pip-tools \
-		&& pip-sync pip-tools.txt requirements.txt dev-requirements.txt \
+		&& echo this!!!!!!!!! \
+		&& pip-sync pip-tools.txt requirements.txt dev-requirements.txt; \
 	else \
 		pip install --upgrade pip \
+		&& echo here!!!!!!!!! \
 		&& pip install --upgrade pip-tools \
-		&& pip-sync pip-tools.txt requirements.txt dev-requirements.txt \
+		&& pip-sync pip-tools.txt requirements.txt dev-requirements.txt; \
 	fi;
-	
+
 
 virtualenv: ${PYENV_ROOT}/versions/${VIRTUALENV_NAME} pip-update
 
